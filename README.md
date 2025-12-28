@@ -19,10 +19,10 @@ A powerful WordPress plugin that sends contact form submissions directly to Disc
 ##  Screenshots
 
 ### Admin Configuration
-![Admin Settings](screenshot-1.png)
+![Admin Settings](screenshot-2.png)
 
 ### Form Builder
-![Form Editor](screenshot-2.png)
+![Form Editor](screenshot-1.png)
 
 ### Discord Message
 ![Discord Message](screenshot-3.png)
@@ -79,4 +79,5 @@ GPL v2 or later - [License](https://www.gnu.org/licenses/gpl-2.0.html)
 ---
 
 **Made with ❤️ for the WordPress and Discord communities**
+
 
