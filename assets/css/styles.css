@@ -1,0 +1,218 @@
+/* Discord Contact Form - Estilos adaptativos inspirados en Contact Form 7 */
+
+.dcf-wrapper {
+    position: relative;
+}
+
+/* Ocultar respuestas de pantalla para accesibilidad */
+.dcf-wrapper .screen-reader-response {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    word-wrap: normal !important;
+}
+
+/* Contenedor de campos ocultos */
+.dcf-wrapper .hidden-fields-container {
+    display: none;
+}
+
+/* Respuestas del formulario */
+.dcf-wrapper form .dcf-response-output {
+    margin: 2em 0.5em 1em;
+    padding: 0.2em 1em;
+    border: 2px solid #00a0d2; /* Azul por defecto */
+}
+
+/* Ocultar respuesta en estados iniciales */
+.dcf-wrapper form.init .dcf-response-output,
+.dcf-wrapper form.resetting .dcf-response-output,
+.dcf-wrapper form.submitting .dcf-response-output {
+    display: none;
+}
+
+/* Estados de éxito */
+.dcf-wrapper form.sent .dcf-response-output {
+    border-color: #46b450; /* Verde */
+    background-color: rgba(70, 180, 80, 0.1);
+    color: #155724;
+}
+
+/* Estados de error */
+.dcf-wrapper form.failed .dcf-response-output,
+.dcf-wrapper form.aborted .dcf-response-output {
+    border-color: #dc3232; /* Rojo */
+    background-color: rgba(220, 50, 50, 0.1);
+    color: #721c24;
+}
+
+/* Estados de validación */
+.dcf-wrapper form.invalid .dcf-response-output {
+    border-color: #ffb900; /* Amarillo */
+    background-color: rgba(255, 185, 0, 0.1);
+    color: #856404;
+}
+
+/* Contenedores de controles del formulario */
+.dcf-form-control-wrap {
+    position: relative;
+    margin-bottom: 1em;
+}
+
+/* Labels */
+.dcf-form-control-wrap label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+/* Controles del formulario - heredan estilos del tema */
+.dcf-form-control {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.dcf-form-control:focus {
+    outline: none;
+    border-color: #00a0d2;
+    box-shadow: 0 0 0 1px #00a0d2;
+}
+
+/* Textarea específico */
+.dcf-form-control.dcf-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Botón de envío */
+.dcf-submit {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: inherit;
+    transition: background-color 0.2s;
+}
+
+.dcf-submit:hover:not(:disabled) {
+    background-color: #005a87;
+}
+
+.dcf-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Spinner de carga */
+.dcf-spinner {
+    visibility: hidden;
+    display: inline-block;
+    background-color: #23282d;
+    opacity: 0.75;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 100%;
+    padding: 0;
+    margin: 0 0 0 24px;
+    position: relative;
+    vertical-align: middle;
+}
+
+form.submitting .dcf-spinner {
+    visibility: visible;
+}
+
+.dcf-spinner::before {
+    content: '';
+    position: absolute;
+    background-color: #fbfbfc;
+    top: 4px;
+    left: 4px;
+    width: 6px;
+    height: 6px;
+    border: none;
+    border-radius: 100%;
+    transform-origin: 8px 8px;
+    animation-name: dcf-spin;
+    animation-duration: 1000ms;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dcf-spinner::before {
+        animation-name: dcf-blink;
+        animation-duration: 2000ms;
+    }
+}
+
+@keyframes dcf-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dcf-blink {
+    from {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Mensajes de error de validación */
+.dcf-not-valid-tip {
+    color: #dc3232;
+    font-size: 0.9em;
+    font-weight: normal;
+    display: block;
+    margin-top: 0.25em;
+}
+
+/* Estados del formulario */
+.dcf-wrapper [inert] {
+    opacity: 0.5;
+}
+
+.dcf-wrapper input[type="file"] {
+    cursor: pointer;
+}
+
+.dcf-wrapper input[type="file"]:disabled {
+    cursor: default;
+}
+
+/* Campos específicos */
+.dcf-wrapper input[type="url"],
+.dcf-wrapper input[type="email"],
+.dcf-wrapper input[type="tel"] {
+    direction: ltr;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .dcf-wrapper form .dcf-response-output {
+        margin: 1em 0;
+    }
+}
