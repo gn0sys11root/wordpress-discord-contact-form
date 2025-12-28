@@ -1,4 +1,4 @@
-# Discord Contact Form
+# Discord Contact Form - Wordpress plugin
 
 A powerful WordPress plugin that sends contact form submissions directly to Discord channels via webhooks.
 
@@ -79,3 +79,4 @@ GPL v2 or later - [License](https://www.gnu.org/licenses/gpl-2.0.html)
 ---
 
 **Made with ❤️ for the WordPress and Discord communities**
+
